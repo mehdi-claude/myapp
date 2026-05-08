@@ -1,0 +1,43 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "dependencies": {
+    "@cap-js/sqlite": "^2",
+    "@sap/cds": "^9.9.0",
+    "@sap/xssec": "^4.13.0"
+  },
+  "devDependencies": {
+    "@sap-ux/eslint-plugin-fiori-tools": "^9.13.0",
+    "@sap/cds-dk": "^9",
+    "@ui5/cli": "^4.0.52",
+    "cds-plugin-ui5": "^0.13.6",
+    "eslint": "^9.39.4"
+  },
+  "scripts": {
+    "start": "cds run",
+    "watch-products": "cds watch --open com.myapp.products/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/products"
+  ],
+  "cds": {
+    "requires": {
+      "auth": {
+        "kind": "dummy"
+      },
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": ":memory:"
+        }
+      }
+    }
+  },
+  "overrides": {
+    "@eslint/js": "9.0.0"
+  }
+}
