@@ -31,6 +31,17 @@ module.exports = class CatalogService extends cds.ApplicationService {
       }
     });
 
+    this.before("DELETE", "Products", async req => {
+      const { ID } = req.params[0];
+      const product = await SELECT.one.from("Products").where({ ID });
+      if (!product) {
+        return req.error(404, "Produkt nicht gefunden!");
+      }
+      if (product.stock > 0) {
+        return req.error(400, "Produkt mit Bestand kann nicht geloescht werden!");
+      }
+    });
+
     await super.init();
   }
 }
