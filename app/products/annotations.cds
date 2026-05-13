@@ -11,3 +11,10 @@ annotate service.Products with @(
     ],
     UI.SelectionFields : [ category_ID, price ],
 );
+
+annotate service.Products with @(
+    UI.HeaderInfo : {
+        TypeName       : 'Product',
+        TypeNamePlural : 'Products'
+    }
+);

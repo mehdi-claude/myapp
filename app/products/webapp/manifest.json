@@ -4,17 +4,10 @@
     "id": "com.myapp.products",
     "type": "application",
     "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "0.0.1"
-    },
+    "applicationVersion": { "version": "0.0.1" },
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "resources": "resources.json",
-    "sourceTemplate": {
-      "id": "@sap/generator-fiori:lrop",
-      "version": "1.23.0",
-      "toolsId": "04516581-c34f-44ef-92cc-85093b94ab96"
-    },
     "dataSources": {
       "mainService": {
         "uri": "/odata/v4/catalog/",
@@ -28,14 +21,6 @@
   },
   "sap.ui": {
     "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
     "deviceTypes": {
       "desktop": true,
       "tablet": true,
@@ -71,14 +56,7 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
-      },
-      "@i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "uri": "i18n/i18n.properties"
       }
-    },
-    "resources": {
-      "css": []
     },
     "routing": {
       "config": {},
@@ -114,6 +92,13 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "myCustomAction": {
+                      "press": "com.myapp.products.ext.controller.ListReportExt.onShowToast",
+                      "enabled": true,
+                      "text": "Info anzeigen"
+                    }
                   }
                 }
               }
@@ -129,6 +114,15 @@
               "editableHeaderContent": false,
               "contextPath": "/Products"
             }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ListReport.ListReportController": {
+            "controllerName": "com.myapp.products.ext.controller.ListReportExt"
           }
         }
       }

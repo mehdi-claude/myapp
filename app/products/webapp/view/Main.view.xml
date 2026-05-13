@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="com.myapp.products.controller.ListReport"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    
+    <Page title="Meine Produkte App">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Title text="Willkommen!" level="H1"/>
+                <Text text="Das ist mein erster UI5 Controller!"/>
+                <Button 
+                    text="Info anzeigen" 
+                    press=".onShowInfo"
+                    type="Emphasized"/>
+                <Button 
+                    text="Toast anzeigen" 
+                    press=".onShowToast"
+                    class="sapUiSmallMarginTop"/>
+            </VBox>
+        </content>
+    </Page>
+    
+</mvc:View>
