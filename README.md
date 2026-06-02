@@ -87,7 +87,7 @@ cds watch
 
 ---
 
-## 🇬🇧 SAP BTP Learning Project (English)
+## EN SAP BTP Learning Project (English)
 
 Hi! I'm **Mehdi Mehr**, an aspiring Junior SAP Developer.
 
